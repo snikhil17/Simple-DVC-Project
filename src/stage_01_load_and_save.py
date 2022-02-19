@@ -8,6 +8,10 @@ from src.utils.common_utils import (
 )
 import logging
 
+# ascii-time, level (can be specified by dev) at which log is recorded, module for which log is recorded, message related to the log 
+logging_string = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
+logging.basicConfig(level = logging.DEBUG, format=logging_string)
+
 def get_data(config_path):
     config = read_params(config_path)
 
@@ -31,6 +35,6 @@ if __name__ == "__main__":
 
     try:
         data = get_data(config_path=parsed_args.config)
-        # logging.info(f"reading and writing raw data stage completed")
+        logging.info(f"reading and writing raw data stage completed")
     except Exception as e:
-        raise e
+        logging.error(e)

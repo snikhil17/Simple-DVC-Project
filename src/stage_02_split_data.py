@@ -8,6 +8,10 @@ from src.utils.common_utils import (
 from sklearn.model_selection import train_test_split
 import logging
 
+# ascii-time, level (can be specified by dev) at which log is recorded, module for which log is recorded, message related to the log 
+logging_string = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
+logging.basicConfig(level = logging.DEBUG, format=logging_string)
+
 def split_and_save_data(config_path):
     config = read_params(config_path)
 
@@ -51,7 +55,6 @@ if __name__ == "__main__":
 
     try:
         data = split_and_save_data(config_path=parsed_args.config)
-        # logging.info("split data stage completed")
+        logging.info("split data stage completed")
     except Exception as e:
-        # logging.error(e)
-        raise e
+        logging.error(e)

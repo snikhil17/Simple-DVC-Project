@@ -18,4 +18,17 @@ artifacts:
     train_path: artifacts/processed_data/train.csv
     test_path: artifacts/processed_data/test.csv
 
-    
+  reports:
+    reports_dir: artifacts/report         # create directory (report)
+    params: artifacts/report/params.json  # create params.json inside report
+    scores: artifacts/report/scores.json  # create scores.json inside report
+
+  model_dir: artifacts/saved_models                # create directory (saved_models)
+  model_path: artifacts/saved_models/model.joblib  # create model.joblib inside saved_models
+
+
+estimators:       # Defining the estimators we'll be using
+  ElasticNet:     # using ElasticNet (since regression problem)
+    params:       # Defining parameters
+      alpha: 0.7    
+      l1_ratio: 0.4
