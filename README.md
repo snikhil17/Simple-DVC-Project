@@ -1,9 +1,6 @@
 # Simple-DVC-Project
 simple-dvc-project is about giving dem of automating ML pipelines
 
-## important commands-
-refer at [this link](others/imp_commands.md)
-
 ## wokflow -
 <img src="others/imgs/simple-workflow-01@2x.png" alt="workflow" width="70%">
 
